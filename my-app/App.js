@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert, Linking } from 'react-native';
 import * as firebase from 'firebase/app';
 import { get, getDatabase, onValue, ref, set, child } from "firebase/database";
 import { getAuth } from "firebase/auth";
@@ -105,6 +105,11 @@ export default function App() {
       <Button
         title="No"
         onPress={() => updateNumNo()}
+      />
+      {/* Click this button to be taken to a very magical place--beyond your wildest dreams. */}
+      <Button
+        title="Claim Free Gift"
+        onPress={() => Linking.openURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ")}
       />
       {/* <Text>Num Yeses = {numYeses}</Text> */}
       <StatusBar style="auto" />
