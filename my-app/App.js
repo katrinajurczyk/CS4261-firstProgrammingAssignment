@@ -16,9 +16,9 @@ import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: 'AIzaSyCUn2IalJ8sIac-u1dRp-jbKcdqD9e9_-0',
   authDomain: 'first-programming-assign-da4ab.firebaseapp.com',
-  databaseURL: "XXX",
-  projectId:"XXX",
-  storageBucket: "XXX",
+  databaseURL: "https://first-programming-assign-da4ab-default-rtdb.firebaseio.com",
+  projectId:"first-programming-assign-da4ab",
+  storageBucket: "first-programming-assign-da4ab.appspot.com",
   databaseURL: 'https://first-programming-assign-da4ab-default-rtdb.firebaseio.com',
   projectId: 'first-programming-assign-da4ab',
   storageBucket: 'first-programming-assign-da4ab.appspot.com',
@@ -61,7 +61,8 @@ function updateNumYes() {
   console.log("original numYeses: " + numYeses);
   numYeses = numYeses + 1;
   set(ref(db), {
-      numYes: numYeses
+      numYes: numYeses,
+      numNo: numNos
   });
   console.log("numYeses after update: " + numYeses);
   Alert.alert('Thank you for your feedback!');
@@ -71,6 +72,7 @@ function updateNumNo() {
   console.log("original numNos: " + numNos);
   numNos = numNos + 1;
   set(ref(db), {
+      numYes: numYeses,
       numNo: numNos
   });
   console.log("numNos after update: " + numNos);
